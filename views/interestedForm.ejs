@@ -1,0 +1,45 @@
+<!-- views/interestedForm.ejs -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Interessado</title>
+</head>
+<body>
+  
+  <h1>Cadastro de Interessado</h1>
+  <form action="/interested/new" method="POST" onsubmit="return validateForm()">  
+    <script>
+      function validateForm() {
+        const phoneInput = document.getElementById('phone');
+        const nomeInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneRegex = /^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/;
+        if (!phoneRegex.test(phoneInput.value)) {
+          alert('Número de telefone inválido!');
+          return false;
+        }
+        if (nomeInput.value.trim() === '') {
+            alert('Por favor, insira o seu nome.');
+            return false;
+        }
+
+        if (emailInput.value.trim() === '' || !emailInput.value.includes('@')) { 
+            alert('Por favor, insira um endereço de email válido.');
+            return false;
+        }
+        return true;
+      }
+    </script>  
+    <label for="name">Nome:</label>
+    <input type="text" name="name" id="name">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+    <label for="phone">Telefone:</label>
+    <input type="tel" name="phone" id="phone">
+    <button type="submit">Cadastrar</button>
+  </form>
+  
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Adoções</title>
+</head>
+<body>
+  <h1>Lista de Adoções</h1>
+  <ul>
+    <% adoptionList.forEach(adoption => { %>
+      <li><%= adoption.interested.name %> quer adotar <%= adoption.pet.name %> em <%= format(new Date(adoption.date), 'dd/MM/yyyy HH:mm:ss') %></li>
+    <% }) %>
+  </ul>
+  <a href="/menu">Voltar ao Menu</a>
+</body>
+</html>

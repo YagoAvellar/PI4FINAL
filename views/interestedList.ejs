@@ -1,0 +1,19 @@
+<!-- views/interestedList.ejs -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Interessados</title>
+</head>
+<body>
+  <h1>Lista de Interessados</h1>
+  <ul>
+    <% interested.forEach(i => { %>
+      <li><%= i.name %> - <%= i.email %> - <%= i.phone %></li>
+    <% }) %>
+  </ul>
+  <a href="/interested/new">Cadastrar Novo Interessado</a>
+  <a href="/menu">Voltar ao Menu</a>
+</body>
+</html>

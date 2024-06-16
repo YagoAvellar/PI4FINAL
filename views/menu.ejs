@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <h1>Menu</h1>
+  <p>Último acesso: <%= lastAccess %></p>
+  <ul>
+    <li><a href="/interested/new">Cadastro de Interessados</a></li>
+    <li><a href="/pet/new">Cadastro de Pets</a></li>
+    <li><a href="/adoption/new">Adotar um Pet</a></li>
+  </ul>
+  <h2>Listagens</h2>
+  <ul>
+    <li><a href="/interested/list">Listar Interessados</a></li>
+    <li><a href="/pet/list">Listar Pets</a></li>
+    <li><a href="/adoption/list">Listar Adoções</a></li>
+  </ul>
+  <a href="/auth/logout">Logout</a>
+</body>
+</html>

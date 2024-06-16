@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adoção de Pet</title>
+</head>
+<body>
+  <h1>Adoção de Pet</h1>
+  <form action="/adoption/new" method="POST">
+    <label for="interested">Interessado:</label>
+    <select name="interestedId" id="interested">
+      <% if (interested.length > 0) { %>
+        <% interested.forEach(i => { %>
+          <option value="<%= i.id %>"><%= i.name %></option>
+        <% }) %>
+      <% } else { %>
+        <option value="">Nenhum interessado cadastrado</option>
+      <% } %>
+    </select>
+  
+    <label for="pet">Pet:</label>
+    <select name="petId" id="pet">
+      <% if (pets.length > 0) { %>
+        <% pets.forEach(p => { %>
+          <option value="<%= p.id %>"><%= p.name %></option>
+        <% }) %>
+      <% } else { %>
+        <option value="">Nenhum pet cadastrado</option>
+      <% } %>
+    </select>
+  
+    <% if (interested.length > 0 && pets.length > 0) { %>
+      <button type="submit">Adotar</button>
+    <% } else { %>
+      <p>Não é possível realizar adoções no momento.</p>
+      <a href="/menu">Voltar ao Menu</a>
+    <% } %>
+  </form>
+</body>
+</html>
